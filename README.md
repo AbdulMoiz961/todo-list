@@ -5,4 +5,4 @@ This project was created as a personal project for implementing React Concepts a
 ## Live Website
 
 You can use the Task Manager app here.
-Open [http://localhost:3000](http://localhost:3000) to use it in your browser.
+Open [https://abdu1-moiz-tm.netlify.app/](https://abdu1-moiz-tm.netlify.app/) to use it in your browser.
