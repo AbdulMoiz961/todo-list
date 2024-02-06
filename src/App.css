@@ -1,38 +1,201 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font: var(--font-family);
+    background: var(--color-bg);
+    /* background-color: #190036; */
+    color: #555;
+    
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    margin: 1rem;
+}
+
 .App {
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.tm-header {
+    padding: 2rem;
+    padding-top: 3rem;
+    font-family: var(--font-family);
+    font-size: 32px;
+    text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.tm-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.task-count {
+    padding: 1rem;
+    font-family: var(--font-family);
+    font-size: 18px;
+    text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.msg-header {
+    padding: 1rem;
+    font-family: var(--font-family);
+    font-size: 18px;
+    text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.task-form {
+    display: flex;
+    padding: 1rem;
+}
+
+.task-form form {
+    border: 3px solid #5e4977;
+    border-radius: 10px;
+    padding: 5px;
+    display: flex;
+    width: 320px;
+    gap: 8px;
+}
+
+.task-form form input[type="text"] {
+    background: none;
+    color: #dbdbdb;
+    border: none;
+    padding: 0 8px;
+    display: block;
+    width: 100%;
+
+    font-family: var(--font-family);
+    font-size: 14px;
+}
+
+.task-form form input[type="text"]:focus,
+.task-form form input[type="text"]:valid {
+    outline: 0;
+}
+
+.task-form form button {
+    color: #a3a3a3;
+    background-color: #6700a3;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+div.task {
+    width: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0.5rem;
+
+    background-color: #5e4977;
+    border-radius: 10px;
+    padding: 5px 9px;
+    transition: opacity .3s linear;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox svg {
+    margin: 1px;
+    fill: #25003a;
+}
+
+div.task.done {
+    opacity: 0.3;
+}
+
+.task-name {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    color: #e0e0e0;
+    text-shadow: -0.3px -0.3px 0 #000, 0.3px -0.3px 0 #000, -0.3px 0.3px 0 #000, 0.3px 0.3px 0 #000;
+    font-family: var(--font-family-2);
+    font-size: 15px;
+}
+
+.task-name span {
+    position: relative;
+}
+
+div.task-name, 
+div.task form {
+    flex-grow: 1;
+}
+
+div.task form {
+    display: flex;
+    align-items: center;
+}
+
+div.task span:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background-color: #ddd;
+    position: absolute;
+    top: 10px;
+    transition: width .1s linear;
+}
+
+div.task.done span:before {
+    width: 100%;
+}
+
+button.trash {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+button.trash svg {
+    fill: #1d1d1d;
+}
+
+div.task input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: none;
+    border: 2px solid #250052;
+    border-radius: 5px;
+    padding: 4px 8px;
+
+    color: #e0e0e0;
+    text-shadow: -0.3px -0.3px 0 #000, 0.3px -0.3px 0 #000, -0.3px 0.3px 0 #000, 0.3px 0.3px 0 #000;
+    font-family: var(--font-family-2);
+    font-size: 14px;
+}
+
+div.task input:focus,
+div.task input:valid {
+    outline: 0;
 }
