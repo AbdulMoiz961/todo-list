@@ -51,12 +51,12 @@ const App = () => {
   function getMessage() {
     const percentage = numberComplete / numberTotal * 100;
     if (percentage === 0) {
-      return 'Give it a shot! 🙏';
+      return 'Give it a shot!';
     }
     if (percentage === 100) {
-      return 'Fantastic effort today! 🚀';
+      return 'Fantastic effort today!';
     }
-    return 'Continue the momentum! 💪🏻'
+    return 'Continue the momentum!'
   }
 
   return (
